@@ -8,9 +8,9 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
   }
   body {
+    font-family: Roboto,sans-serif;
     background-color: ${Theme.primary.background};
     color: ${Theme.primary.main};
-    font-family: 'Source Sans Pro', sans-serif;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
   }
@@ -18,7 +18,8 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
   input, button {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: Roboto, sans-serif;
+
   }
   button {
     cursor: pointer;

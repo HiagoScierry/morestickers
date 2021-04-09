@@ -1,12 +1,13 @@
 import React from "react";
 import { Container } from "./styles";
 
-interface ButtonProps {
+type ButtonProps = {
   text: string;
+  onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text }) => {
-  return <Container>{text}</Container>;
+const Button: React.FC<ButtonProps> = ({ text, onClick = () => {} }) => {
+  return <Container onClick={onClick}>{text}</Container>;
 };
 
 export default Button;

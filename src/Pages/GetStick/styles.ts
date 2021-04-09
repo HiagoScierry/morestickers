@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import InputMask from "react-input-mask";
 import { Theme } from "../../Styles";
 import { pxToRem } from "../../Utils";
 
@@ -18,7 +19,7 @@ export const Box = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 
   border: ${pxToRem(2)} solid ${Theme.primary.main};
@@ -35,10 +36,15 @@ export const Form = styled.div`
   width: 95%;
   height: ${pxToRem(400)};
   padding: ${pxToRem(20)};
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 `;
 
 export const Name = styled.div`
-  width: 100%;
+  width: 94%;
   height: ${pxToRem(50)};
 
   margin-bottom: ${pxToRem(20)};
@@ -48,7 +54,7 @@ export const Name = styled.div`
   align-items: center;
 `;
 
-export const InputMiddle = styled.input`
+export const InputMiddle = styled(InputMask)`
   background-color: ${Theme.primary.main};
   color: ${Theme.primary.text};
 
@@ -71,8 +77,7 @@ export const Item = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-
-  `;
+`;
 
 export const Label = styled.div`
   padding-left: ${pxToRem(10)};
@@ -80,7 +85,7 @@ export const Label = styled.div`
   font-weight: 600;
 `;
 
-export const Input = styled.input`
+export const Input = styled(InputMask)`
   background-color: ${Theme.primary.main};
   color: ${Theme.primary.text};
 
@@ -98,7 +103,7 @@ export const Input = styled.input`
 `;
 
 export const CEP = styled.div`
-  width: 100%;
+  width: 94%;
   height: ${pxToRem(50)};
 
   margin-bottom: ${pxToRem(25)};
@@ -108,7 +113,7 @@ export const CEP = styled.div`
   align-items: center;
 `;
 
-export const InputThree = styled.input`
+export const InputThree = styled(InputMask)`
   background-color: ${Theme.primary.main};
   color: ${Theme.primary.text};
 
@@ -126,7 +131,7 @@ export const InputThree = styled.input`
 `;
 
 export const Streets = styled.div`
-  width: 100%;
+  width: 94%;
   height: ${pxToRem(50)};
 
   margin-bottom: ${pxToRem(20)};
@@ -134,4 +139,24 @@ export const Streets = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const Complement = styled.div`
+  width: 94%;
+  height: ${pxToRem(50)};
+
+  margin-bottom: ${pxToRem(20)};
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const AlignButton = styled.div`
+  width: 100%;
+  height: ${pxToRem(200)};
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
 `;

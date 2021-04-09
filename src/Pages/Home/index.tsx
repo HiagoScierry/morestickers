@@ -15,7 +15,7 @@ const Home: React.FC = () => {
           Faça seu cadastro e receba o primeiro pacote em 3 dias !!!
         </Subtitle>
         <Link to="/stick">
-          <Button text="Manda !" />
+          <Button text="Manda !" onClick={() => {}} />
         </Link>
       </Box>
     </Container>

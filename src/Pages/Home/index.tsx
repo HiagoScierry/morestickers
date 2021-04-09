@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaDev } from "react-icons/fa";
 
-import { Container, Title, Subtitle, Box } from "./styles";
+import { Container, Title, Subtitle, Box, Dev } from "./styles";
 import { Button } from "../../Components/index";
 
 const Home: React.FC = () => {
   return (
     <Container>
       <Box>
-        <FaDev size={75} />
+        <Dev />
         <Title>Receba Stickers de Programação</Title>
         <Subtitle>
           Faça seu cadastro e receba o primeiro pacote em 3 dias !!!

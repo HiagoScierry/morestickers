@@ -73,7 +73,12 @@ const GetStick: React.FC = () => {
       } else {
         setEditStreet(true);
       }
-    } catch (error) {}
+    } catch (error) {
+      setEditState(false);
+      setEditCity(false);
+      setEditStreet(false);
+      setEditDistrict(false);
+    }
   };
 
   const send = async () => {

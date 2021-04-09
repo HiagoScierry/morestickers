@@ -19,10 +19,15 @@ export const Container = styled.div`
 
   font-weight: 600;
 
-  text-decoration: none;
-
-
   &&:hover {
     opacity: 0.8;
+  }
+
+  @media (max-width: 400px) {
+    width: ${pxToRem(70)};
+    height: ${pxToRem(30)};
+    padding: ${pxToRem(10)};
+
+    font-size: ${pxToRem(13)};
   }
 `;

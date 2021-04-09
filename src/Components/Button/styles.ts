@@ -23,8 +23,17 @@ export const Container = styled.div`
     opacity: 0.8;
   }
 
-  @media (max-width: 400px) {
-    width: ${pxToRem(70)};
+
+  @media (max-width: 900px) {
+    width: ${pxToRem(100)};
+    height: ${pxToRem(30)};
+    padding: ${pxToRem(10)};
+
+    font-size: ${pxToRem(13)};
+  }
+
+  @media (max-width: 500px) {
+    width: ${pxToRem(80)};
     height: ${pxToRem(30)};
     padding: ${pxToRem(10)};
 

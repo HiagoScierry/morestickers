@@ -18,6 +18,8 @@ import {
   Streets,
   Complement,
   AlignButton,
+  BoxAddress,
+  AlignButtonAddress
 } from "./styles";
 
 import { Button } from "../../Components";
@@ -126,9 +128,9 @@ const GetStick: React.FC = () => {
 
   return (
     <Container>
-      <Box>
-        {steps === 0 ? (
-          <>
+      {steps === 0 ? (
+        <>
+          <Box>
             <Title>Dados Pessoais</Title>
             <Form>
               <Name>
@@ -167,13 +169,25 @@ const GetStick: React.FC = () => {
                 </Item>
               </Contacts>
             </Form>
-          </>
-        ) : (
-          <></>
-        )}
+            <AlignButton>
+              <Link to="/">
+                <Button text="Voltar" onClick={() => {}} />
+              </Link>
 
-        {steps === 1 ? (
-          <>
+              <Button
+                text="Proximo"
+                onClick={() => setSteps((prev) => prev + 1)}
+              />
+            </AlignButton>
+          </Box>
+        </>
+      ) : (
+        <></>
+      )}
+
+      {steps === 1 ? (
+        <>
+          <BoxAddress>
             <Title>Endereço</Title>
             <Form>
               <CEP>
@@ -265,33 +279,18 @@ const GetStick: React.FC = () => {
                 </Item>
               </Complement>
             </Form>
-          </>
-        ) : (
-          <></>
-        )}
-
-        <AlignButton>
-          {steps === 0 ? (
-            <Link to="/">
-              <Button text="Voltar" onClick={() => {}} />
-            </Link>
-          ) : (
-            <Button
-              text="Voltar"
-              onClick={() => setSteps((prev) => prev - 1)}
-            />
-          )}
-
-          {steps === 0 ? (
-            <Button
-              text="Proximo"
-              onClick={() => setSteps((prev) => prev + 1)}
-            />
-          ) : (
-            <Button text="Enviar" onClick={() => send()} />
-          )}
-        </AlignButton>
-      </Box>
+            <AlignButtonAddress>
+              <Button
+                text="Voltar"
+                onClick={() => setSteps((prev) => prev - 1)}
+              />
+              <Button text="Enviar" onClick={() => send()} />
+            </AlignButtonAddress>
+          </BoxAddress>
+        </>
+      ) : (
+        <></>
+      )}
     </Container>
   );
 };

@@ -47,7 +47,7 @@ export const Title = styled.h3`
   }
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   width: 95%;
   height: ${pxToRem(400)};
   padding: ${pxToRem(20)};

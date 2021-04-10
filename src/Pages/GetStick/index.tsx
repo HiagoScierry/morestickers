@@ -19,7 +19,7 @@ import {
   Complement,
   AlignButton,
   BoxAddress,
-  AlignButtonAddress
+  AlignButtonAddress,
 } from "./styles";
 
 import { Button } from "../../Components";
@@ -97,11 +97,18 @@ const GetStick: React.FC = () => {
         addressCity &&
         addressState
       ) {
+        const onlyNumber = /\D/g;
+
+        console.log({
+          phone: phone.replace(onlyNumber, ""),
+          addressZip: addressZip.replace(onlyNumber, ""),
+        });
+
         const data = {
           name,
           email,
-          phone,
-          addressZip,
+          phone: phone.replace(onlyNumber, ""),
+          addressZip: addressZip.replace(onlyNumber, ""),
           addressStreet,
           addressNumber,
           addressComplement,
@@ -126,6 +133,14 @@ const GetStick: React.FC = () => {
     }
   };
 
+  const nextStep = () => {
+    if (name.length <= 7) {
+      alert("O nome precisa ter no minimo 8 caracteres !");
+    } else {
+      setSteps((prev) => prev + 1);
+    }
+  };
+
   return (
     <Container>
       {steps === 0 ? (
@@ -137,12 +152,10 @@ const GetStick: React.FC = () => {
                 <Item>
                   <Label>Nome :</Label>
                   <InputMiddle
-                    aria-required={true}
                     mask=""
                     placeholder="Hiago Moreira"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    type="text"
                   />
                 </Item>
                 <Item>
@@ -151,7 +164,6 @@ const GetStick: React.FC = () => {
                     placeholder="(27)99860-8981"
                     mask="(99)99999-9999"
                     value={phone}
-                    aria-required={true}
                     onChange={(e) => setPhone(e.target.value)}
                   />
                 </Item>
@@ -163,7 +175,6 @@ const GetStick: React.FC = () => {
                     placeholder="hiagocarlosmoreira@hotmail.com"
                     mask=""
                     value={email}
-                    aria-required={true}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </Item>
@@ -174,10 +185,7 @@ const GetStick: React.FC = () => {
                 <Button text="Voltar" onClick={() => {}} />
               </Link>
 
-              <Button
-                text="Proximo"
-                onClick={() => setSteps((prev) => prev + 1)}
-              />
+              <Button text="Proximo" onClick={() => nextStep()} />
             </AlignButton>
           </Box>
         </>
@@ -195,9 +203,7 @@ const GetStick: React.FC = () => {
                   <Label>CEP :</Label>
                   <InputThree
                     mask="99999-999"
-                    required
                     placeholder="29500-000"
-                    aria-required={true}
                     value={addressZip}
                     onChange={(e) => {
                       if (e.target.value.length >= 7) {
@@ -215,7 +221,6 @@ const GetStick: React.FC = () => {
                     placeholder="ES"
                     mask=""
                     disabled={editState ? true : false}
-                    aria-required={true}
                     value={addressState}
                     onChange={(e) => setAddressState(e.target.value)}
                   />
@@ -226,7 +231,6 @@ const GetStick: React.FC = () => {
                     placeholder="Alegre"
                     disabled={editCity ? true : false}
                     mask=""
-                    aria-required={true}
                     value={addressCity}
                     onChange={(e) => setAddressCity(e.target.value)}
                   />
@@ -238,7 +242,6 @@ const GetStick: React.FC = () => {
                   <InputMiddle
                     mask=""
                     disabled={editDistrict ? true : false}
-                    aria-required={true}
                     placeholder="COAB"
                     value={addressDistrict}
                     onChange={(e) => setAddressDistrict(e.target.value)}
@@ -249,7 +252,6 @@ const GetStick: React.FC = () => {
                   <InputMiddle
                     mask=""
                     disabled={editStreet ? true : false}
-                    aria-required={true}
                     placeholder="Av. dos Estados"
                     value={addressStreet}
                     onChange={(e) => setAddressStreet(e.target.value)}
@@ -260,7 +262,6 @@ const GetStick: React.FC = () => {
                 <Item>
                   <Label>Numero :</Label>
                   <InputMiddle
-                    aria-required={true}
                     mask=""
                     placeholder="123"
                     value={addressNumber}
@@ -270,7 +271,6 @@ const GetStick: React.FC = () => {
                 <Item>
                   <Label>Complemento :</Label>
                   <InputMiddle
-                    aria-required={true}
                     mask=""
                     placeholder="Proximo a ..."
                     value={addressComplement}

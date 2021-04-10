@@ -23,7 +23,7 @@ Neste projeto foi utilizado as seguintes tecnologias para desenvolvimento :
 - [x] Os nomes dos campos são name, email, phone, addressZip, addressStreet, addressNumber, addressComplement, addressDistrict, addressCity, addressState
 - [x] O campo telefone e CEP deverão ter máscara para facilitar ao usuário visualizar a informação
 - [x] Ao informar o CEP, busca o endereço em alguma API e preencher os campos abaixo e não permitir ao usuário alterar, deixar alterar apenas número e complemento
-- [ ] Se o CEP não for encontrado, deixar preencher todos os campos
+- [x] Se o CEP não for encontrado, deixar preencher todos os campos
 - [ ] Não exibir campos de endereço enquanto não buscar por CEP
 
 
